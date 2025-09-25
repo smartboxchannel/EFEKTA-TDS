@@ -153,15 +153,16 @@ const definition = {
 		    e.temperature(),
 			exposes.enum('tds_coefficient', ea.STATE_SET, [500, 550, 640, 700, 1000]).withDescription('TDS coefficient)'),
 		    exposes.numeric('ecCalibration', ea.STATE_SET).withUnit('unit').withValueStep(0.001).withDescription('EC calibration').withValueMin(-10.00).withValueMax(10.00),
-			exposes.numeric('tCalibration', ea.STATE_SET).withUnit('unit').withValueStep(0.001).withDescription('Temperarure calibration').withValueMin(-10.00).withValueMax(10.00),
+			//exposes.numeric('tCalibration', ea.STATE_SET).withUnit('unit').withValueStep(0.001).withDescription('Temperarure calibration').withValueMin(-10.00).withValueMax(10.00),
 			exposes.numeric('ds18b20_identifier', ea.STATE).withDescription('DS18B20 identifier'),
 		    exposes.numeric('reading_interval', ea.STATE_SET).withUnit('Seconds').withDescription('Setting the sensor reading interval. Setting the time in seconds, by default 30 seconds')
                 .withValueMin(10).withValueMax(360),
 			exposes.numeric('tds_offset', ea.STATE_SET).withUnit('ppm').withValueStep(0.1).withDescription('Adjust TDS')
                 .withValueMin(-100.0).withValueMax(100.0),
-			exposes.enum('tx_radio_power', ea.STATE_SET, [0, 4, 10, 19]).withDescription('Set TX Radio Power, dbm)'),
+			exposes.enum('tx_radio_power', ea.STATE_SET, [4, 19]).withDescription('Set TX Radio Power, dbm)'),
 			exposes.numeric('temperature_offset', ea.STATE_SET).withUnit('°C').withValueStep(0.1).withDescription('Adjust temperature')
                 .withValueMin(-50.0).withValueMax(50.0)],
 };
+
 
 module.exports = definition;
